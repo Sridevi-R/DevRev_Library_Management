@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Feedback form</title>
+</head>
+<body>
+    <h1 style="text-align:center" >Login Form</h1>
+    <div id="warning"></div>
+    <form name="Form" >
+        <label>Username<sup>*</sup></label><br>
+        <input type="text" name="reg" id="reg"><br><br>
+        <label>Password<sup>*</sup></label>
+        <input type="text" name="mob" id="mob" size="10" pattern="[0-9]{10}"><br><br>
+        <label for="email">Enter your email:</label>
+        <input type="email" id="email" name="email"><br><br>
+        <input type="button" value="submit" onclick="feedback()">
+    </form>
+    <div id="res"></div>
+</body>
+<script>
+    function feedback(){
+        if(document.Form.reg.value==="" ||document.Form.mob.value===""||document.Form.mail.value===""||document.Form.feed.value===""){
+            document.getElementById("warning").innerHTML="<h2 style=\"color=red\">Fill all</h2>";
+            alert("Fill all");
+            return;
+        }
+        /*else{
+            document.getElementById("res").innerHTML="<h2>success</h2>";
+            alert("Success");
+            return;
+        }*/
+        document.getElementById("res").innerHTML="<h2>success</h2>";
+    }
+</script>
+</html>
